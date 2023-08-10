@@ -1,0 +1,8 @@
+streamlit
+whisper
+joblib
+pandas
+numpy
+pydub
+scikit-learn
+nltk

@@ -1,6 +1,5 @@
 import streamlit as st
 import whisper
-import joblib
 import pandas as pd
 
 import numpy as np
@@ -9,7 +8,7 @@ import statistics
 from pydub import AudioSegment # Audio Spliter
 from statistics import mode
 
-detection_model = joblib.load("trained_detector_model.joblib")
+from trained_detection_model import Model
 whisper_model = whisper.load_model("medium")
 
 label_mapping = {0: "hate", 1: "offensive", 2: "neither"}
@@ -25,7 +24,7 @@ def transcribe(audio):
     return text_list
 
 def predict(list_to_check):
-    pred_encoded = detection_model.predict(list_to_check)
+    pred_encoded = Modell.predict(list_to_check)
     pred_labels = [label_mapping[pred] for pred in pred_encoded]
 
     result_df = pd.DataFrame({'text': list_to_check, 'predicted_label': pred_labels})

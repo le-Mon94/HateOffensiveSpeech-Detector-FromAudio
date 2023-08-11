@@ -5,6 +5,8 @@ import pandas as pd
 
 import numpy as np
 
+print(dir(whisper))
+
 print("Checking file existence...")
 import os
 print("File exists:", os.path.exists("trained_detection_model_joblib.joblib"))

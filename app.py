@@ -20,7 +20,7 @@ except Exception as e:
 try:
     whisper_model = whisper.load_model("medium")
 except Exception as e:
-    print("Error loading Whisper model:", e)
+    st.error("Error loading Whisper model: " + str(e))
 
 
 label_mapping = {0: "hate", 1: "offensive", 2: "neither"}

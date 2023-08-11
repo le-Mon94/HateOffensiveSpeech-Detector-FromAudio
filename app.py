@@ -4,6 +4,9 @@ import pandas as pd
 import whisper
 import os
 
+def split_text(text):
+    return text.split()
+
 # Check if the trained model file exists
 model_filename = "trained_detection_model.joblib"
 model_exists = os.path.exists(model_filename)

@@ -2,7 +2,6 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-import numpy as np
 import os
 
 from whisper import Whisper

@@ -3,6 +3,8 @@ import whisper
 import joblib
 import pandas as pd
 
+from transformers import pipeline
+
 import numpy as np
 
 print("Checking file existence...")
@@ -18,9 +20,9 @@ except Exception as e:
     print("Error loading model:", e)
 
 try:
-    whisper_model = whisper.load_model("medium")
+    whisper_model = pipeline("automatic-speech-recognition", model="openai/whisper-medium")
 except Exception as e:
-    st.error("Error loading Whisper model: " + str(e))
+    st.error("Error loading Whisper model: " + str)
 
 
 label_mapping = {0: "hate", 1: "offensive", 2: "neither"}

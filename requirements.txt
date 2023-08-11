@@ -3,7 +3,7 @@ whisper
 joblib
 pandas
 numpy
-transformer
+transformers
 pydub
 scikit-learn
 nltk

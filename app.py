@@ -4,6 +4,8 @@ import pandas as pd
 import whisper
 import os
 
+from trained_detection_model import split_text
+
 print("Checking file existence...")
 print("File exists:", os.path.exists("trained_detection_model_joblib.joblib"))
 

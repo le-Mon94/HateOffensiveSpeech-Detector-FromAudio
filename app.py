@@ -16,7 +16,7 @@ except Exception as e:
     print("Error loading model:", e)
 
 try:
-    whisper_model = whisper()
+    whisper_model = whisper.load_model("medium")
 except Exception as e:
     st.error("Error loading Whisper model: " + str)
 

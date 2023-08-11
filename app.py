@@ -2,6 +2,7 @@ import streamlit as st
 import whisper
 import joblib
 import pandas as pd
+import transformers
 
 from transformers import pipeline
 

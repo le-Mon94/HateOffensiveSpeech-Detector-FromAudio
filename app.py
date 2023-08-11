@@ -4,11 +4,27 @@ import pandas as pd
 import whisper
 import os
 
-print("Checking file existence...")
-print("File exists:", os.path.exists("trained_detection_model.joblib"))
+# Check if the trained model file exists
+model_filename = "trained_detection_model.joblib"
+model_exists = os.path.exists(model_filename)
 
-Model = joblib.load("trained_detection_model.joblib")
-whisper_model = whisper.load_model("medium")
+print("Checking file existence...")
+print("File exists:", model_exists)
+
+if model_exists:
+    try:
+        Model = joblib.load(model_filename)
+    except Exception as e:
+        st.error(f"Error loading the trained model: {e}")
+        Model = None
+else:
+    Model = None
+
+try:
+    whisper_model = whisper.load_model("medium")
+except Exception as e:
+    st.error(f"Error loading the Whisper model: {e}")
+    whisper_model = None
 
 
 label_mapping = {0: "hate", 1: "offensive", 2: "neither"}

@@ -20,7 +20,7 @@ except Exception as e:
 # Rest of your Streamlit app code
 # ...
 
-whisper_model = whisper.Models().get_model("medium")
+whisper_model = whisper.load_model("medium")
 
 label_mapping = {0: "hate", 1: "offensive", 2: "neither"}
 

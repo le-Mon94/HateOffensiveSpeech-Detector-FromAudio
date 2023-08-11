@@ -5,7 +5,7 @@ import pandas as pd
 
 import numpy as np
 
-Model = joblib.load("trained_detection_model_joblib")
+Model = joblib.load("trained_detection_model_joblib.joblib")
 whisper_model = whisper.load_model("medium")
 
 label_mapping = {0: "hate", 1: "offensive", 2: "neither"}

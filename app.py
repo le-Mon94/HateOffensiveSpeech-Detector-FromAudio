@@ -1,15 +1,13 @@
 import streamlit as st
-import whisper
 import joblib
 import pandas as pd
-import transformers
-
-from transformers import pipeline
 
 import numpy as np
+import os
+
+from whisper import Whisper
 
 print("Checking file existence...")
-import os
 print("File exists:", os.path.exists("trained_detection_model_joblib.joblib"))
 
 whisper_model = None
@@ -21,7 +19,7 @@ except Exception as e:
     print("Error loading model:", e)
 
 try:
-    whisper_model = pipeline("automatic-speech-recognition", model="openai/whisper-medium")
+    whisper_model = Whisper()
 except Exception as e:
     st.error("Error loading Whisper model: " + str)
 

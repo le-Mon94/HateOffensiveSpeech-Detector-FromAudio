@@ -5,7 +5,7 @@ import pandas as pd
 
 import numpy as np
 
-print(dir(whisper))
+st.write(dir(whisper))
 
 print("Checking file existence...")
 import os

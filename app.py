@@ -5,20 +5,15 @@ import pandas as pd
 
 import numpy as np
 
-# Print to debug
 print("Checking file existence...")
 import os
 print("File exists:", os.path.exists("trained_detection_model_joblib.joblib"))
 
-# Load the trained model
 try:
     Model = joblib.load("trained_detection_model_joblib.joblib")
     print("Model loaded successfully!")
 except Exception as e:
     print("Error loading model:", e)
-
-# Rest of your Streamlit app code
-# ...
 
 whisper_model = whisper.load_model("medium")
 

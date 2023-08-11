@@ -7,18 +7,8 @@ import os
 print("Checking file existence...")
 print("File exists:", os.path.exists("trained_detection_model_joblib.joblib"))
 
-whisper_model = None
-
-try:
-    Model = joblib.load("trained_detection_model_joblib.joblib")
-    print("Model loaded successfully!")
-except Exception as e:
-    print("Error loading model:", e)
-
-try:
-    whisper_model = whisper.load_model("medium")
-except Exception as e:
-    st.error("Error loading Whisper model: ", e)
+Model = joblib.load("trained_detection_model_joblib.joblib")
+whisper_model = whisper.load_model("medium")
 
 
 label_mapping = {0: "hate", 1: "offensive", 2: "neither"}

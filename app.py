@@ -7,7 +7,7 @@ import numpy as np
 
 from statistics import mode 
 
-Model = joblib.load("trained_detection_model.joblib")
+from trained_detection_model_joblib
 whisper_model = whisper.load_model("medium")
 
 label_mapping = {0: "hate", 1: "offensive", 2: "neither"}

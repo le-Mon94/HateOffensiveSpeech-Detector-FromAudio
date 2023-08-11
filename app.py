@@ -4,12 +4,10 @@ import pandas as pd
 import whisper
 import os
 
-from trained_detection_model import Model
-
 print("Checking file existence...")
-print("File exists:", os.path.exists("trained_detection_model_joblib.joblib"))
+print("File exists:", os.path.exists("trained_detection_model.joblib"))
 
-Model = joblib.load("trained_detection_model_joblib.joblib")
+Model = joblib.load("trained_detection_model.joblib")
 whisper_model = whisper.load_model("medium")
 
 

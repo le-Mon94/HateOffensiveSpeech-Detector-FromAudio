@@ -55,11 +55,14 @@ def main():
 
     if st.button("Continue"):
         if uploaded_file is not None:
+            if whisper_model is not None:
+                result = transcribe(uploaded_file)
+                str.write(result)
 
-            result = transcribe(uploaded_file)
-            str.write(result)
+                predict(result)
 
-            predict(result)
+            else:
+                st.error("Whisper model could not be loaded.")
 
     else:
         st.warning("Please upload an audio file before clicking the button.")

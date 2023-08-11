@@ -1,10 +1,8 @@
 import streamlit as st
 import joblib
 import pandas as pd
-
+import whisper
 import os
-
-from whisper import Whisper
 
 print("Checking file existence...")
 print("File exists:", os.path.exists("trained_detection_model_joblib.joblib"))
@@ -18,7 +16,7 @@ except Exception as e:
     print("Error loading model:", e)
 
 try:
-    whisper_model = Whisper()
+    whisper_model = whisper()
 except Exception as e:
     st.error("Error loading Whisper model: " + str)
 

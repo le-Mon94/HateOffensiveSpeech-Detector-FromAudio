@@ -5,8 +5,6 @@ import pandas as pd
 
 import numpy as np
 
-st.write(dir(whisper))
-
 print("Checking file existence...")
 import os
 print("File exists:", os.path.exists("trained_detection_model_joblib.joblib"))
@@ -17,7 +15,11 @@ try:
 except Exception as e:
     print("Error loading model:", e)
 
-whisper_model = whisper.load_model("medium")
+try:
+    whisper_model = whisper.load_model("medium")
+except Exception as e:
+    print("Error loading Whisper model:", e)
+
 
 label_mapping = {0: "hate", 1: "offensive", 2: "neither"}
 

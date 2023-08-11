@@ -9,6 +9,8 @@ print("Checking file existence...")
 import os
 print("File exists:", os.path.exists("trained_detection_model_joblib.joblib"))
 
+whisper_model = None
+
 try:
     Model = joblib.load("trained_detection_model_joblib.joblib")
     print("Model loaded successfully!")

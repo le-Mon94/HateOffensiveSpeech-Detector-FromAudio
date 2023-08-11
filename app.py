@@ -47,7 +47,7 @@ def main():
         if uploaded_file is not None:
             if whisper_model is not None:
                 result = transcribe(uploaded_file)
-                str.write(result)
+                st.write(result)
 
                 predict(result)
 

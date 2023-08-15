@@ -1,9 +1,0 @@
-streamlit
-whisper
-joblib
-pandas
-numpy
-transformers
-pydub
-scikit-learn
-nltk
